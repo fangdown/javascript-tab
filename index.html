@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>面向对象的tab选项卡</title>
+	<style>
+		html,body,div,ul,li{
+	      box-sizing: border-box;
+	      margin: 0;
+	      padding: 0;
+	    }
+	    ul,li{
+			list-style: none;
+	    }
+	    .tabWrapper ul{
+	      overflow: hidden;
+	      margin-bottom: -1px;
+	    }
+	    .tabWrapper .tab{
+	      float: left;
+	      width: 100px;
+	      height: 50px;
+	      line-height: 50px;
+	      text-align: center;
+	      border-top: 1px solid #ccc;
+	      border-right: 1px solid #ccc;
+	      border-bottom: 1px solid #ccc;
+	      cursor: pointer;
+	    }
+	    .tabWrapper .tab:first-child{
+	      border-left: 1px solid #ccc;
+	    }
+	    .tabWrapper .tab.active{
+	      font-weight: 700;
+	      border-bottom: none;
+	    }
+	    .tabWrapper .panel{
+	      display: none;
+	      width: 300px;
+	      height: 100px;
+	      border: 1px solid #ccc;
+	      border-top: none;
+	    }
+	    .tabWrapper .panel.active{
+	      display: block
+	    }
+	</style>
+</head>
+<body>
+	<div class="tabWrapper">
+		<ul>
+			<li class="tab active">选项1</li>
+			<li class="tab">选项2</li>
+			<li class="tab">选项3</li>
+		</ul>
+		<div class="panel active">内容1</div>
+		<div class="panel">内容2</div>
+		<div class="panel">内容3</div>
+	</div>
+	<script src="tabPlugin.js"></script>
+	<script>
+		tabPlguin.init('tab','panel','active');
+	</script>
+</body>
+</html>
